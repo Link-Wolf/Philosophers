@@ -47,18 +47,16 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 <div align="center">
   <a>
-    <img src="https://media.discordapp.net/attachments/453159761639112706/998949433800654918/unknown.png" alt="FdF header">
+    <img src="assets/phlo_illu.png" alt="FdF header">
   </a>
 </div>
 </br>
@@ -70,15 +68,17 @@ To eat a philosopher needs both their right and left forks. A philosopher can on
 If the philosopher can eat, they do then they'll sleep before thinking again
 
 The goal of the project is to simulate this problem by using C `threads`, and with custom parameters
-- `number_of_philosophers` : the number of philosophers and also the number of forks
-- `time_to_die` : if a philosopher doesn’t start eating `time_to_die` milliseconds after starting his last meal or the beginning of the simulation, he dies
-- `time_to_eat` : The time (in milliseconds) it takes for a philosopher to eat. During that time he will need to keep the two forks
-- `time_to_sleep` : The time (in milliseconds) the philosopher will spend sleeping
-- **[Optional]** `number_of_times_each_philosopher_must_eat` : if every philosopher eat at least `number_of_times_each_philosopher_must_eat` times, the simulation will stop. If not specified, the simulation will stop only at the death of a philosopher
+
+-   `number_of_philosophers` : the number of philosophers and also the number of forks
+-   `time_to_die` : if a philosopher doesn’t start eating `time_to_die` milliseconds after starting his last meal or the beginning of the simulation, he dies
+-   `time_to_eat` : The time (in milliseconds) it takes for a philosopher to eat. During that time he will need to keep the two forks
+-   `time_to_sleep` : The time (in milliseconds) the philosopher will spend sleeping
+-   **[Optional]** `number_of_times_each_philosopher_must_eat` : if every philosopher eat at least `number_of_times_each_philosopher_must_eat` times, the simulation will stop. If not specified, the simulation will stop only at the death of a philosopher
 
 Each philosopher should be a `thread`, to avoid philosophers duplicating forks we have to protect the forks state with a
 `mutex` for each of them and philosophers don’t speak with each other.
 Philosophers should avoid dying, so the program should organize each philosopher time, and print any change of status of a philosopher as :
+
 ```
   [timestamp_in_ms] X ([has taken a fork] / [is eating] / [is sleeping] / [is thinking] / [died])
 ```
@@ -90,10 +90,10 @@ They have no states in memory but the number of available forks is represented b
 a `semaphore`</br>
 And each philosopher should be a process and the main process should not be a philosopher
 
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 Because it's a simple C program, there isn't much to say here
@@ -105,34 +105,37 @@ Having a C compiler like cc, gcc or clang
 ### Installation
 
 1. Clone the repo
-   ```sh
-   git clone https://github.com/Link-Wolf/Philosophers.git
-   ```
+    ```sh
+    git clone https://github.com/Link-Wolf/Philosophers.git
+    ```
 2. Compile Philosophers
-   ```sh
-   cd Philosophers/philo; make
-   ```
+    ```sh
+    cd Philosophers/philo; make
+    ```
 3. Execute the program with parameters described <a href="#about-the-project">here</a> and see how it works
-   ```sh
-   ./philo 10 800 400 200
-   ```
-   *it should run forever*
-   
-   Or stop the program with `number_of_times_each_philosopher_must_eat`
-   ```sh
-   ./philo 10 800 400 200 15
-   ```
+
+    ```sh
+    ./philo 6 800 400 200
+    ```
+
+    _it should run forever_
+
+    Or stop the program with `number_of_times_each_philosopher_must_eat`
+
+    ```sh
+    ./philo 6 800 400 200 15
+    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- USAGE EXAMPLES -->
+
 ## Usage
 
 Test this Philosophers with the parameters you want, with or without a stopper !
 
 #### Example
+
 ```sh
    ./philo 3 800 400 200 3
 ```
@@ -188,6 +191,7 @@ Test this Philosophers with the parameters you want, with or without a stopper !
 ```
 
 #### Example where a philosopher die
+
 ```sh
    ./philo 3 500 400 200
 ```
@@ -210,21 +214,18 @@ Test this Philosophers with the parameters you want, with or without a stopper !
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- ROADMAP -->
+
 ## Roadmap
 
-- [ ] Add the bonus
-- [x] Add back to top links
+-   [ ] Add the bonuses (surely never)
 
 See the [open issues](https://github.com/Link-Wolf/Philosophers/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
@@ -235,14 +236,5 @@ Don't forget to give the project a star! Thanks again!
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- CONTACT -->
-## Contact
-
-Mail : xxxxxxx@student.42mulhouse.fr
-
-Project Link: [https://github.com/Link-Wolf/Philosophers](https://github.com/Link-Wolf/Philosophers)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
